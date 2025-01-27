@@ -41,12 +41,15 @@ pico_set_program_name(GPIO-Animations "GPIO-Animations")
 pico_set_program_version(GPIO-Animations "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(GPIO-Animations 1)
-pico_enable_stdio_usb(GPIO-Animations 1)
+pico_enable_stdio_uart(GPIO-Animations 0)
+pico_enable_stdio_usb(GPIO-Animations 0)
 
 # Add the standard library to the build
 target_link_libraries(GPIO-Animations
-        pico_stdlib)
+        pico_stdlib
+        hardware_pio
+        hardware_adc
+        pico_bootrom)
 
 # Add the standard include files to the build
 target_include_directories(GPIO-Animations PRIVATE
@@ -58,5 +61,9 @@ target_link_libraries(GPIO-Animations
         
         )
 
+# Adiciona o arquivo PIO e gera o header
+pico_generate_pio_header(GPIO-Animations ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
+
+# Gera os artefatos extras
 pico_add_extra_outputs(GPIO-Animations)
 

@@ -358,7 +358,12 @@ int main() {
             animacao_seta_5(255, 255, 0);
         } else if (current_key == '3') {
             animacao_ondas(0, 0, 255);
-        } else if (current_key == 'A') {
+            
+        } else if (current_key == '5') {
+            animacao_v();
+           /// animacao_v(0, 0, 255);
+        }  
+        else if (current_key == 'A') {
             clearLEDs();
         } else if (current_key == 'B') {
             for (int i = 0; i < LED_COUNT; i++) {

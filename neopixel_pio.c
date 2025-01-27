@@ -171,28 +171,6 @@ sleep_us(100);
 
 
 
-
-
-
-
-
-
-
-
-
-
-void animacao_coracao_5(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = 0; i < LED_COUNT; i++){
-        npSetLED(i, r, g, b);
-    }
-    npWrite();
-    sleep_ms(500);
-    npClear();
-    npWrite();
-    sleep_ms(500);
-}
-
-
 void clearLEDs() {
 
 npClear();
@@ -255,7 +233,7 @@ int main() {
             }
             npWrite();
         }
-        sleep_ms(50); // Reduz o tempo de espera para melhor responsividade
+        sleep_ms(50); // Reduz  tempo de espera para melhor responsividade
     }
 
     return 0;

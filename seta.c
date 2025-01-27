@@ -15,7 +15,7 @@ void desenha_seta(uint8_t r, uint8_t g, uint8_t b) {
     npWrite();
 }
 
-// Animações para a seta
+// Animações para  seta
 void animacao_seta_1(uint8_t r, uint8_t g, uint8_t b) {
     desenha_seta(r, g, b);
     sleep_ms(200);

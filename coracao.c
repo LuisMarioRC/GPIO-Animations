@@ -28,7 +28,7 @@ npWrite();
 
 }
 
-// Animações para o coração
+// Animações para  coração
 void animacao_coracao_1(uint8_t r, uint8_t g, uint8_t b) {
     desenha_coracao(r, g, b);
     sleep_ms(200);

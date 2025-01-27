@@ -39,7 +39,7 @@ endif()
 # ====================================================================================
 set(PICO_BOARD pico CACHE STRING "Board type")
 
-# Pull in Raspberry Pi Pico SDK (must be before project)
+# Pull in Raspberry Pi Pico SDK (must be before project).
 include(pico_sdk_import.cmake)
 
 project(neopixel_pio C CXX ASM)

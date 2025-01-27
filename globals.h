@@ -30,5 +30,5 @@ void animacao_seta_2(uint8_t r, uint8_t g, uint8_t b);
 void animacao_seta_3(uint8_t r, uint8_t g, uint8_t b);
 void animacao_seta_4(uint8_t r, uint8_t g, uint8_t b);
 void animacao_seta_5(uint8_t r, uint8_t g, uint8_t b);
-
+//
 #endif // GLOBALS_H

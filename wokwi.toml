@@ -1,4 +1,4 @@
 [wokwi]
 version = 1
-firmware = 'build/GPIO-Animations.uf2'
-elf = 'build/GPIO-Animations.elf'
+firmware = 'build/neopixel_pio.uf2'
+elf = 'build/neopixel_pio.elf'

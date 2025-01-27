@@ -3,6 +3,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
+#include "globals.h"
 
 #include "ws2818b.pio.h"
 
@@ -355,6 +356,8 @@ int main() {
             animacao_seta_3(255, 255, 0);
             animacao_seta_4(255, 255, 0);
             animacao_seta_5(255, 255, 0);
+        } else if (current_key == '3') {
+            animacao_ondas(0, 0, 255);
         } else if (current_key == 'A') {
             clearLEDs();
         } else if (current_key == 'B') {

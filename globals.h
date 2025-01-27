@@ -17,5 +17,7 @@ void npSetLED(const uint index, const uint8_t r, const uint8_t g, const uint8_t 
 
 // Declaração da função de animação
 void animacao_ondas(uint8_t r, uint8_t g, uint8_t b);
+/////void animacao_v(uint8_t r, uint8_t g, uint8_t b);
+void animacao_v();
 
 #endif // GLOBALS_H

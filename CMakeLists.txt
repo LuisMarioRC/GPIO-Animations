@@ -53,6 +53,7 @@ add_executable(
     neopixel_pio 
     neopixel_pio.c 
     animacao_ondas.c
+    animacao_zigzag.c
 )
 
 pico_set_program_name(neopixel_pio "neopixel_pio")
@@ -81,4 +82,3 @@ target_link_libraries(neopixel_pio
         )
 
 pico_add_extra_outputs(neopixel_pio)
-

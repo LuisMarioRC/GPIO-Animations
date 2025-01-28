@@ -211,7 +211,6 @@ int main() {
         } else if (current_key == '5') {
             animacao_v();
            /// animacao_v(0, 0, 255);
-        }  
         } else if (current_key == '4')  {
             animacao_zigzag(0, 0, 255);
         } else if (current_key == 'A') {

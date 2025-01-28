@@ -171,156 +171,6 @@ sleep_us(100);
 
 
 
-void desenha_coracao(uint8_t r, uint8_t g, uint8_t b) {
-
-npClear();
-
-npSetLED(2, r, g, b);
-
-npSetLED(6, r, g, b);
-
-npSetLED(10, r, g, b);
-
-npSetLED(14, r, g, b);
-
-npSetLED(8, r, g, b);
-
-npSetLED(16, r, g, b);
-
-npSetLED(18, r, g, b);
-
-npSetLED(12, r, g, b);
-
-
-
-
-npWrite();
-
-}
-
-
-
-void desenha_seta(uint8_t r, uint8_t g, uint8_t b) {
-
-npClear();
-
-npSetLED(2, r, g, b);
-
-npSetLED(6, r, g, b);
-
-npSetLED(10, r, g, b);
-
-npSetLED(8, r, g, b);
-
-npSetLED(14, r, g, b);
-
-npSetLED(7, r, g, b);
-
-npSetLED(12, r, g, b);
-
-npSetLED(17, r, g, b);
-
-npSetLED(22, r, g, b);
-
-
-npWrite();
-
-}
-
-
-
-// Animações para o coração
-void animacao_coracao_1(uint8_t r, uint8_t g, uint8_t b) {
-    desenha_coracao(r, g, b);
-    sleep_ms(200);
-    desenha_coracao(b, r, g);
-    sleep_ms(200);
-}
-
-void animacao_coracao_2(uint8_t r, uint8_t g, uint8_t b) {
-    for (int i = 0; i < 3; i++) {
-        desenha_coracao(r, g, b);
-        sleep_ms(100);
-        desenha_coracao(0, 0, 0);
-        sleep_ms(100);
-    }
-}
-
-void animacao_coracao_3(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = 0; i < LED_COUNT; i++){
-        npClear();
-        npSetLED(i, r, g, b);
-        npWrite();
-        sleep_ms(50);
-    }
-}
-
-void animacao_coracao_4(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = LED_COUNT -1; i >= 0; i--){
-        npClear();
-        npSetLED(i, r, g, b);
-        npWrite();
-        sleep_ms(50);
-    }
-}
-
-void animacao_coracao_5(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = 0; i < LED_COUNT; i++){
-        npSetLED(i, r, g, b);
-    }
-    npWrite();
-    sleep_ms(500);
-    npClear();
-    npWrite();
-    sleep_ms(500);
-}
-
-// Animações para a seta
-void animacao_seta_1(uint8_t r, uint8_t g, uint8_t b) {
-    desenha_seta(r, g, b);
-    sleep_ms(200);
-    desenha_seta(b, r, g);
-    sleep_ms(200);
-}
-
-void animacao_seta_2(uint8_t r, uint8_t g, uint8_t b) {
-    for (int i = 0; i < 3; i++) {
-        desenha_seta(r, g, b);
-        sleep_ms(100);
-        desenha_seta(0, 0, 0);
-        sleep_ms(100);
-    }
-}
-
-void animacao_seta_3(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = 0; i < LED_COUNT; i++){
-        npClear();
-        npSetLED(i, r, g, b);
-        npWrite();
-        sleep_ms(50);
-    }
-}
-
-void animacao_seta_4(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = LED_COUNT -1; i >= 0; i--){
-        npClear();
-        npSetLED(i, r, g, b);
-        npWrite();
-        sleep_ms(50);
-    }
-}
-
-void animacao_seta_5(uint8_t r, uint8_t g, uint8_t b){
-    for (int i = 0; i < LED_COUNT; i++){
-        npSetLED(i, r, g, b);
-    }
-    npWrite();
-    sleep_ms(500);
-    npClear();
-    npWrite();
-    sleep_ms(500);
-}
-
 void clearLEDs() {
 
 npClear();
@@ -357,13 +207,14 @@ int main() {
             animacao_seta_4(255, 255, 0);
             animacao_seta_5(255, 255, 0);
         } else if (current_key == '3') {
-            animacao_ondas(0, 0, 255);
-            
+            animacao_ondas(0, 0, 255);   
         } else if (current_key == '5') {
             animacao_v();
            /// animacao_v(0, 0, 255);
         }  
-        else if (current_key == 'A') {
+        } else if (current_key == '4')  {
+            animacao_zigzag(0, 0, 255);
+        } else if (current_key == 'A') {
             clearLEDs();
         } else if (current_key == 'B') {
             for (int i = 0; i < LED_COUNT; i++) {
@@ -386,7 +237,7 @@ int main() {
             }
             npWrite();
         }
-        sleep_ms(50); // Reduz o tempo de espera para melhor responsividade
+        sleep_ms(50); // Reduz  tempo de espera para melhor responsividade
     }
 
     return 0;

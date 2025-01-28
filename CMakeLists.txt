@@ -39,7 +39,7 @@ endif()
 # ====================================================================================
 set(PICO_BOARD pico CACHE STRING "Board type")
 
-# Pull in Raspberry Pi Pico SDK (must be before project)
+# Pull in Raspberry Pi Pico SDK (must be before project).
 include(pico_sdk_import.cmake)
 
 project(neopixel_pio C CXX ASM)
@@ -54,6 +54,9 @@ add_executable(
     neopixel_pio.c 
     animacao_ondas.c
     animacao_v.c
+    animacao_zigzag.c
+    coracao.c
+    seta.c
 )
 
 pico_set_program_name(neopixel_pio "neopixel_pio")
@@ -82,4 +85,3 @@ target_link_libraries(neopixel_pio
         )
 
 pico_add_extra_outputs(neopixel_pio)
-

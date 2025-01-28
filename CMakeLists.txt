@@ -53,6 +53,7 @@ add_executable(
     neopixel_pio 
     neopixel_pio.c 
     animacao_ondas.c
+    animacao_v.c
     animacao_zigzag.c
     coracao.c
     seta.c

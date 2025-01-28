@@ -6,6 +6,7 @@
 
 // Definições compartilhadas
 #define LED_COUNT 25
+#define BUZZER_PIN 22
 
 extern PIO np_pio;
 extern uint sm;

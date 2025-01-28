@@ -179,11 +179,19 @@ npWrite();
 
 }
 
+// Inicialização do buzzer
+void init_buzzer() {
+    gpio_init(BUZZER_PIN);
+    gpio_set_dir(BUZZER_PIN, GPIO_OUT);
+    gpio_put(BUZZER_PIN, 0); // Inicialmente desligado
+}
+
 int main() {
     stdio_init_all();
     setup_keypad();
     npInit(LED_PIN);
     npClear();
+    init_buzzer();
 
     char current_key = '\0'; // Variável para armazenar a tecla atual
 
